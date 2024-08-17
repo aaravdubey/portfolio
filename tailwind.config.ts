@@ -7,12 +7,12 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-    extend: {
-      colors: {
-        gray: "#09090b",
-        
-      },
+  extend: {
+    colors: {
+      gray: "#09090b",
+
     },
-  } satisfies Config
+  },
+} satisfies Config
 
 export default config

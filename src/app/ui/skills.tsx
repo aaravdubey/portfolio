@@ -43,14 +43,14 @@ export default function Skills() {
 
   const cardVariants: Variants = {
     offscreen: {
-      y: 30,
+      y: 10,
       opacity: 0,
     },
     onscreen: (delay: number) => ({
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "tween",
         opacity: { duration: delay + 0.4 },
         duration: 0.4,
         delay: delay,
@@ -59,15 +59,18 @@ export default function Skills() {
   };
 
   return (
-    <div className="h-screen flex flex-col py-10 px-36 text-grey">
-      <h1 className={`${heading.className} text-4xl tracking-wider`}>
+    <div id="skills" className="h-screen flex flex-col pt-14 px-36 text-grey">
+      <h1
+        className={`${heading.className} text-4xl tracking-wider flex justify-between`}
+      >
         My Skillset
+        <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
       </h1>
 
       <div className={`${text.className} my-10 flex flex-wrap gap-5`}>
         {skills.map((skill, index) => (
           <motion.div
-            className="w-32 flex flex-col items-center gap-4 bg-zinc-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-zinc-800"
+            className="w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
@@ -82,12 +85,13 @@ export default function Skills() {
 
       <h1 className={`${heading.className} text-4xl tracking-wider`}>
         Tools I Use
+        <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
       </h1>
 
       <motion.div className={`${text.className} my-10 flex flex-wrap gap-5`}>
         {tools.map((tool, index) => (
           <motion.div
-            className="w-32 flex flex-col items-center gap-4 bg-zinc-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-zinc-800"
+            className="w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}

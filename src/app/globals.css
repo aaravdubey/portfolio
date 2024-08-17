@@ -9,6 +9,7 @@ html {
   /* Make scrollbar thinner */
   scrollbar-color: #444 #1a1a1a;
   /* Thumb and track colors */
+  scroll-behavior: smooth;
 }
 
 /* For WebKit-based browsers (Chrome, Safari, Edge) */
@@ -46,6 +47,34 @@ body {
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(9, 9, 11, 0.6) 80%, rgba(9, 9, 11, 1) 100%);
 }
 
+
+.image-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 0, 0, 0);
+  /* Start with no tint */
+  transition: background-color 1s ease 3s;
+  pointer-events: none;
+  animation: showTint 4s ease 1s forwards;
+  /* Add an animation */
+}
+
+@keyframes showTint {
+  to {
+    background-color: rgb(17, 24, 39);
+    /* Tint after delay */
+  }
+}
+
+.tint {
+  background-color: rgba(17, 24, 39, 0.6);
+}
+
+
 .fade {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, rgba(9, 9, 11, 0.95) 92%, rgba(9, 9, 11, 1) 100%);
 }
@@ -79,7 +108,7 @@ body {
 @keyframes fadeIn {
   from {
     opacity: 0;
-    scale: 0.98;
+    scale: 0.99;
   }
 
   to {
@@ -96,11 +125,11 @@ body {
 }
 
 .gradient-text {
-  background: -webkit-linear-gradient(#c2c2c9, #43434b);
+  background: -webkit-linear-gradient(rgba(194, 194, 201, 0.3), rgba(67, 67, 67, 0.3));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-bg {
-  background-image: linear-gradient(to bottom, #09090b, #0c0d0f, #0f1013, #101216, #121519, #121519, #121519, #121519, #101216, #0f1013, #0c0d0f, #09090b);
+.dock-active {
+  background-color: rgba(71, 85, 105, 0.4);
 }

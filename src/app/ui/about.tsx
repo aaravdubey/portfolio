@@ -23,11 +23,13 @@ export default function About() {
         ref={element}
         className="flex gap-10 justify-center items-center"
       >
-        <div className="w-2/3 flex flex-col gap-8 text-zinc-300 saturate-0">
+        <div className="w-2/3 flex flex-col gap-8 text-zinc-300">
           <h1
-            className={`${heading.className} text-5xl font-bold leading-[1.4]`}
+            className={`${heading.className} text-5xl font-bold leading-[1.4] text-slate-300`}
           >
             Hello! <br /> I'm Aarav.
+            
+            <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
           </h1>
           <p>I'm an MCA student at Christ University Bangalore.</p>
           <p>I'm passionate about programming and web development.</p>
@@ -43,8 +45,8 @@ export default function About() {
         </div>
         <div className="relative w-1/3">
           <Image
-            src="/photo.png"
-            className="brightness-95 saturate-[.2] contrast-150"
+            src="/photor.png"
+            className="brightness-90 saturate-[.4] contrast-150 bg-slate-700 rounded-t-3xl"
             alt="Picture of myself"
             width={500}
             height={500}
