@@ -1,6 +1,6 @@
 import { text, heading } from "./fonts";
 import { LuExternalLink } from "react-icons/lu";
-import { BiSolidUpArrow } from "react-icons/bi";
+import { BiSolidUpArrow, BiSolidUpsideDown } from "react-icons/bi";
 import { BiSolidDownArrow } from "react-icons/bi";
 import { Variants, motion } from "framer-motion";
 
@@ -37,13 +37,16 @@ const cardVariants2: Variants = {
 
 export default function Exp() {
   return (
-    <div id="experience" className="h-screen flex px-36 py-10 gap-14">
-      <div className="w-full">
+    <div
+      id="experience"
+      className="h-screen flex flex-row-reverse px-36 py-10 gap-14"
+    >
+      <div className="w-full flex flex-col justify-end">
         <h1
-          className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider mb-10 flex gap-2 items-center`}
+          className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider pb-10 flex relative gap-2 justify-end items-center`}
         >
-          EDUCATION
           <BiSolidDownArrow className="text-slate-300 inline" />
+          EDUCATION
         </h1>
 
         <div className="flex flex-col-reverse gap-8">
@@ -70,12 +73,12 @@ export default function Exp() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col-reverse">
+      <div className="w-full">
         <h1
-          className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider mt-10 text-right relative flex gap-2 justify-end items-center`}
+          className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider mb-10 relative flex gap-2 items-center`}
         >
-          <BiSolidUpArrow className="text-slate-300 inline" />
           EXPERIENCE
+          <BiSolidDownArrow className="text-slate-300 inline" />
         </h1>
 
         <div className="flex flex-col-reverse gap-8">

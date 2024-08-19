@@ -34,9 +34,9 @@ export default function Dock() {
         {showDock && (
           <div className="fixed inset-y-0 right-8 flex items-center">
             <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.3 }}
               className=" flex flex-col gap-1 items-center bg-[#09090b] rounded-3xl px-3 py-6 z-10 border space-x-0.5 border-[#2d2d32]"
             >

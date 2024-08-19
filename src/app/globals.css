@@ -57,18 +57,29 @@ body {
   bottom: 0;
   background-color: rgba(255, 0, 0, 0);
   /* Start with no tint */
-  transition: background-color 1s ease 3s;
+  transition: background-color 1s ease;
   pointer-events: none;
-  animation: showTint 4s ease 1s forwards;
-  /* Add an animation */
+  animation: tintChange 7s infinite;
+  /* Infinite loop, 10s duration */
 }
 
-@keyframes showTint {
-  to {
-    background-color: rgb(17, 24, 39);
-    /* Tint after delay */
+@keyframes tintChange {
+  0% {
+    background-color: rgba(31, 42, 66, 0.4);
+    /* Red tint */
+  }
+
+  50% {
+    background-color: rgba(36, 58, 73, 0.6);
+    /* Green tint */
+  }
+
+  100% {
+    background-color: rgba(31, 42, 66, 0.4);
+    /* Back to Red */
   }
 }
+
 
 .tint {
   background-color: rgba(17, 24, 39, 0.6);
