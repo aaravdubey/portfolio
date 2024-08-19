@@ -1,8 +1,11 @@
 "use client";
 
-import "react-tippy/dist/tippy.css";
-import { Tooltip } from "react-tippy";
-import { useEffect, useState } from "react";
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/shift-away.css";
+import "tippy.js/animations/shift-away-subtle.css";
+import "tippy.js/themes/translucent.css";
+import Tippy from "@tippyjs/react";
+import { forwardRef, useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { SiAboutdotme } from "react-icons/si";
@@ -17,8 +20,10 @@ export default function Dock() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const mainHeight =
-        document.querySelector("#main-component")?.offsetHeight || 0;
+      const mainComponent = document.querySelector(
+        "#main-component"
+      ) as HTMLElement | null;
+      const mainHeight = mainComponent?.offsetHeight || 0;
       setShowDock(window.scrollY > mainHeight / 2);
     };
 
@@ -27,6 +32,74 @@ export default function Dock() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // Component for About Link
+  const AboutLink = forwardRef<HTMLSpanElement>((props, ref) => (
+    <span ref={ref}>
+      <Link
+        activeClass="dock-active"
+        to="about"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={1000}
+        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+      >
+        <SiAboutdotme />
+      </Link>
+    </span>
+  ));
+
+  // Component for Projects Link
+  const ProjectsLink = forwardRef<HTMLSpanElement>((props, ref) => (
+    <span ref={ref}>
+      <Link
+        activeClass="dock-active"
+        to="projects"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={1000}
+        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+      >
+        <FaCode />
+      </Link>
+    </span>
+  ));
+
+  // Component for Experience Link
+  const ExperienceLink = forwardRef<HTMLSpanElement>((props, ref) => (
+    <span ref={ref}>
+      <Link
+        activeClass="dock-active"
+        to="experience"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={1000}
+        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+      >
+        <MdOutlineWorkOutline />
+      </Link>
+    </span>
+  ));
+
+  // Component for Skills Link
+  const SkillsLink = forwardRef<HTMLSpanElement>((props, ref) => (
+    <span ref={ref}>
+      <Link
+        activeClass="dock-active"
+        to="skills"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={1000}
+        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+      >
+        <FaReact />
+      </Link>
+    </span>
+  ));
 
   return (
     <>
@@ -38,61 +111,47 @@ export default function Dock() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.3 }}
-              className=" flex flex-col gap-1 items-center bg-[#09090b] rounded-3xl px-3 py-6 z-10 border space-x-0.5 border-[#2d2d32]"
+              className=" flex   flex-col gap-1 items-center bg-[#09090b] rounded-3xl px-3 py-6 z-10 border space-x-0.5 border-[#2d2d32]"
             >
-              <Tooltip title="About" {...tooltipOptions}>
-                <Link
-                  activeClass="dock-active"
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={1000}
-                  className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-                >
-                  <SiAboutdotme />
-                </Link>
-              </Tooltip>
+              <Tippy
+                content="About"
+                arrow={false}
+                placement="left"
+                animation="shift-away"
+                theme="translucent"
+              >
+                <AboutLink />
+              </Tippy>
 
-              <Tooltip title="Projects" {...tooltipOptions}>
-                <Link
-                  activeClass="dock-active"
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={1000}
-                  className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-                >
-                  <FaCode />
-                </Link>
-              </Tooltip>
-              <Tooltip title="Experience" {...tooltipOptions}>
-                <Link
-                  activeClass="dock-active"
-                  to="experience"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={1000}
-                  className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-                >
-                  <MdOutlineWorkOutline />
-                </Link>
-              </Tooltip>
-              <Tooltip title="Skills" {...tooltipOptions}>
-                <Link
-                  activeClass="dock-active"
-                  to="skills"
-                  spy={true}
-                  smooth={true}
-                  offset={0}
-                  duration={1000}
-                  className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-                >
-                  <FaReact />
-                </Link>
-              </Tooltip>
+              <Tippy
+                content="Projects"
+                arrow={false}
+                placement="left"
+                animation="shift-away"
+                theme="translucent"
+              >
+                <ProjectsLink />
+              </Tippy>
+
+              <Tippy
+                content="Experience"
+                arrow={false}
+                placement="left"
+                animation="shift-away"
+                theme="translucent"
+              >
+                <ExperienceLink />
+              </Tippy>
+
+              <Tippy
+                content="Skills"
+                arrow={false}
+                placement="left"
+                animation="shift-away"
+                theme="translucent"
+              >
+                <SkillsLink />
+              </Tippy>
 
               <hr className="w-full mb-2 border-[#2d2d32]" />
 
@@ -121,7 +180,7 @@ export default function Dock() {
   );
 }
 
-const tooltipOptions = {
+const TippyOptions = {
   position: "left",
   trigger: "mouseenter",
   animation: "perspective",

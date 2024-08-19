@@ -30,7 +30,7 @@ export default function About() {
               <h1
                 className={`${heading.className} text-5xl font-bold leading-[1.4] text-slate-300`}
               >
-                Hello! <br /> I'm Aarav.
+                Hello! <br /> I&#39;m Aarav.
                 <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
               </h1>
               <p>I'm an MCA student at Christ University Bangalore.</p>
