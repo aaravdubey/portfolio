@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { text, heading } from "./fonts";
 import { Variants, motion } from "framer-motion";
 import { IoIosArrowBack } from "react-icons/io";
+import Image from "next/image";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(projects[0]); // Set initial project
@@ -28,9 +29,10 @@ export default function Projects() {
           // custom={index * 0.1}
           variants={cardVariants}
         >
-          <img
+          <Image
             src={selectedProject.imageUrl}
             alt={selectedProject.name}
+            layout="fill"
             className={`w-full h-full object-cover transition-opacity duration-700 ease-in-out absolute brightness-75 group-hover:brightness-100 transition-transform transform group-hover:scale-[1.008]`}
           />
 

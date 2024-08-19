@@ -1,6 +1,6 @@
 "use client";
 
-import Dock from "./components/dock";
+import Dock from "./ui/dock";
 import About from "./ui/about";
 import Exp from "./ui/exp";
 import Main from "./ui/main";

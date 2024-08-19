@@ -54,6 +54,7 @@ export default function Exp() {
 
           {education.map((edu, index) => (
             <motion.div
+              key={index}
               className="bg-slate-800 bg-opacity-20 backdrop-blur-lg border border-white/10 rounded-lg p-6"
               initial="offscreen"
               whileInView="onscreen"
@@ -84,6 +85,7 @@ export default function Exp() {
         <div className="flex flex-col-reverse gap-8">
           {experience.map((exp, index) => (
             <motion.div
+              key={index}
               className="bg-slate-800 bg-opacity-20 backdrop-blur-lg border border-white/10 rounded-lg p-6"
               initial="offscreen"
               whileInView="onscreen"

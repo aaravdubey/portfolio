@@ -1,6 +1,7 @@
 import { text, heading } from "./fonts";
 import { Link, animateScroll as scroll } from "react-scroll";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Main() {
   const handleMailTo = () => {
@@ -23,9 +24,11 @@ export default function Main() {
           / aaravdubey.dev
         </p>
       </header>
-      <img
+      <Image
         src="https://images6.alphacoders.com/135/1350469.png"
-        alt="Retro background"
+        alt="Full View Image"
+        layout="fill"
+        priority={true}
         className="absolute inset-0 opacity-35 saturate-0 contrast-125 brightness-[.45] object-cover w-full h-full fade-in"
       />
       <div className="absolute inset-0 vignette fade"></div>

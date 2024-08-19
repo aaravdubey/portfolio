@@ -70,6 +70,7 @@ export default function Skills() {
       <div className={`${text.className} my-10 flex flex-wrap gap-5`}>
         {skills.map((skill, index) => (
           <motion.div
+            key={index}
             className="w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
             initial="offscreen"
             whileInView="onscreen"
@@ -91,6 +92,7 @@ export default function Skills() {
       <motion.div className={`${text.className} my-10 flex flex-wrap gap-5`}>
         {tools.map((tool, index) => (
           <motion.div
+            key={index}
             className="w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
             initial="offscreen"
             whileInView="onscreen"

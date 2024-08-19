@@ -33,14 +33,14 @@ export default function About() {
                 Hello! <br /> I&#39;m Aarav.
                 <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
               </h1>
-              <p>I'm an MCA student at Christ University Bangalore.</p>
-              <p>I'm passionate about programming and web development.</p>
+              <p>I&#39;m an MCA student at Christ University Bangalore.</p>
+              <p>I&#39;m passionate about programming and web development.</p>
               <p>
-                I'm fluent in React.js, Next.js, and Node.js, and I love
+                I&#39;m fluent in React.js, Next.js, and Node.js, and I love
                 creating dynamic and responsive web applications.
               </p>
               <p>
-                When I'm not busy debugging (which is rare), I'm always eager to
+                When I&#39  ;m not busy debugging (which is rare), I&#39;m always eager to
                 learn new things and stay ahead in the ever-evolving world of
                 web development.
               </p>
