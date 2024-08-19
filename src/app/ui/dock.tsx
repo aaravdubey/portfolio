@@ -1,5 +1,3 @@
-"use client";
-
 import "tippy.js/dist/tippy.css";
 import "tippy.js/animations/shift-away.css";
 import "tippy.js/animations/shift-away-subtle.css";
@@ -14,6 +12,78 @@ import { MdOutlineWorkOutline } from "react-icons/md";
 import { FaReact } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
+
+const AboutLink = forwardRef<HTMLSpanElement>((props, ref) => (
+  <span ref={ref}>
+    <Link
+      activeClass="dock-active"
+      to="about"
+      spy={true}
+      smooth={true}
+      offset={0}
+      duration={1000}
+      className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+    >
+      <SiAboutdotme />
+    </Link>
+  </span>
+));
+
+AboutLink.displayName = 'AboutLink';
+
+const ProjectsLink = forwardRef<HTMLSpanElement>((props, ref) => (
+  <span ref={ref}>
+    <Link
+      activeClass="dock-active"
+      to="projects"
+      spy={true}
+      smooth={true}
+      offset={0}
+      duration={1000}
+      className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+    >
+      <FaCode />
+    </Link>
+  </span>
+));
+
+ProjectsLink.displayName = 'ProjectsLink';
+
+const ExperienceLink = forwardRef<HTMLSpanElement>((props, ref) => (
+  <span ref={ref}>
+    <Link
+      activeClass="dock-active"
+      to="experience"
+      spy={true}
+      smooth={true}
+      offset={0}
+      duration={1000}
+      className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+    >
+      <MdOutlineWorkOutline />
+    </Link>
+  </span>
+));
+
+ExperienceLink.displayName = 'ExperienceLink';
+
+const SkillsLink = forwardRef<HTMLSpanElement>((props, ref) => (
+  <span ref={ref}>
+    <Link
+      activeClass="dock-active"
+      to="skills"
+      spy={true}
+      smooth={true}
+      offset={0}
+      duration={1000}
+      className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
+    >
+      <FaReact />
+    </Link>
+  </span>
+));
+
+SkillsLink.displayName = 'SkillsLink';
 
 export default function Dock() {
   const [showDock, setShowDock] = useState(false);
@@ -32,74 +102,6 @@ export default function Dock() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  // Component for About Link
-  const AboutLink = forwardRef<HTMLSpanElement>((props, ref) => (
-    <span ref={ref}>
-      <Link
-        activeClass="dock-active"
-        to="about"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={1000}
-        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-      >
-        <SiAboutdotme />
-      </Link>
-    </span>
-  ));
-
-  // Component for Projects Link
-  const ProjectsLink = forwardRef<HTMLSpanElement>((props, ref) => (
-    <span ref={ref}>
-      <Link
-        activeClass="dock-active"
-        to="projects"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={1000}
-        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-      >
-        <FaCode />
-      </Link>
-    </span>
-  ));
-
-  // Component for Experience Link
-  const ExperienceLink = forwardRef<HTMLSpanElement>((props, ref) => (
-    <span ref={ref}>
-      <Link
-        activeClass="dock-active"
-        to="experience"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={1000}
-        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-      >
-        <MdOutlineWorkOutline />
-      </Link>
-    </span>
-  ));
-
-  // Component for Skills Link
-  const SkillsLink = forwardRef<HTMLSpanElement>((props, ref) => (
-    <span ref={ref}>
-      <Link
-        activeClass="dock-active"
-        to="skills"
-        spy={true}
-        smooth={true}
-        offset={0}
-        duration={1000}
-        className="inline-block hover:bg-slate-600 hover:bg-opacity-20 text-lg p-3 rounded-full hover:text-white transition-colors"
-      >
-        <FaReact />
-      </Link>
-    </span>
-  ));
 
   return (
     <>
@@ -179,12 +181,3 @@ export default function Dock() {
     </>
   );
 }
-
-const TippyOptions = {
-  position: "left",
-  trigger: "mouseenter",
-  animation: "perspective",
-  distance: 15,
-  // transitionFlip: true,
-  // followCursor: true, // Uncomment if needed
-};

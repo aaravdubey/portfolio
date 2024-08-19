@@ -104,7 +104,7 @@ export default function Exp() {
                 {exp.tasks && (
                   <ul className="list-disc list-none">
                     {exp.tasks.map((task) => (
-                      <li className="text-zinc-400 text-sm mt-1">- {task}</li>
+                      <li key={index} className="text-zinc-400 text-sm mt-1">- {task}</li>
                     ))}
                   </ul>
                 )}
