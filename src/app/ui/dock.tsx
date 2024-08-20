@@ -10,7 +10,6 @@ import { SiAboutdotme } from "react-icons/si";
 import { FaCode } from "react-icons/fa6";
 import { MdOutlineWorkOutline } from "react-icons/md";
 import { FaReact } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 const AboutLink = forwardRef<HTMLSpanElement>((props, ref) => (

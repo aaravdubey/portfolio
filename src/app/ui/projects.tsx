@@ -1,28 +1,30 @@
-import { useEffect, useState } from "react";
+import { forwardRef, useEffect, useState } from "react";
 import { text, heading } from "./fonts";
 import { Variants, motion } from "framer-motion";
 import { IoIosArrowBack } from "react-icons/io";
 import Image from "next/image";
 
+import "tippy.js/dist/tippy.css";
+import "tippy.js/animations/scale.css";
+import "tippy.js/animations/scale-subtle.css";
+import "tippy.js/themes/translucent.css";
+import Tippy from "@tippyjs/react";
+import { followCursor } from "tippy.js";
+
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState(projects[0]); // Set initial project
+  const [selectedProject, setSelectedProject] = useState(projects[0]);
 
-  return (
-    <div
-      id="projects"
-      className="h-screen flex flex-col gap-10 relative px-36 py-10"
-    >
-      <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.7)] bg-slate-800 absolute right-0 top-1/2"></div>
-      <h1
-        className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider`}
+  const ProjectLink = forwardRef<HTMLAnchorElement, { href: string }>(
+    ({ href }, ref) => (
+      <a
+        className="w-4/5 p-4 block rounded-lg relative overflow-hidden group cursor-none"
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        ref={ref}
       >
-        {"< PROJECTS />"}
-      </h1>
-
-      <div className="flex-1 flex gap-5 h-screen">
-        {/* Left Side: Selected Project Image */}
         <motion.div
-          className="w-4/5 p-4 flex items-center justify-center rounded-lg relative overflow-hidden group"
+          className="w-full h-full flex items-center justify-center relative overflow-hidden"
           initial="offscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.5 }}
@@ -39,14 +41,14 @@ export default function Projects() {
           <div className="absolute h-full w-full transition-opacity duration-700 ease-in-out tint group-hover:opacity-0" />
 
           <div
-            className={`${text.className} text-zinc-300 absolute inset-x-0 left-0 z-10 h-full bg-gradient-to-r from-[#09090b] to-transpare flex transition ease-in-out duration-100 flex-col text-left items-start py-10 gap-5 tracking-wide`}
+            className={`${text.className} text-zinc-300 absolute inset-x-0 left-0 z-10 h-full bg-gradient-to-r from-[#09090b] to-transpare flex transition ease-in-out duration-100 flex-col text-left items-start py-5 gap-5 tracking-wide`}
           >
             <p className="text-3xl font-bold tracking-wider">
               {selectedProject.name}
             </p>
             <ul className="w-[40%]">
               {selectedProject.text.map((text) => (
-                <li key={text} className="text-sm mb-2">
+                <li key={text} className="text-xs mb-2">
                   - {text}
                 </li>
               ))}
@@ -57,7 +59,7 @@ export default function Projects() {
                 return (
                   <span
                     key={index}
-                    className="bg-zinc-700 rounded-3xl px-2 py-1 text-sm"
+                    className="bg-zinc-700 rounded-3xl px-2 py-1 text-xs"
                   >
                     {stack}
                   </span>
@@ -66,6 +68,37 @@ export default function Projects() {
             </div>
           </div>
         </motion.div>
+      </a>
+    )
+  );
+
+  ProjectLink.displayName = "ProjectLink";
+
+  return (
+    <div
+      id="projects"
+      className="h-screen flex flex-col gap-10 relative px-36 py-10"
+    >
+      <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.7)] bg-slate-800 absolute right-0 top-1/2"></div>
+      <h1
+        className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider`}
+      >
+        {"< PROJECTS />"}
+      </h1>
+
+      <div className="flex-1 flex gap-5 h-screen">
+        {/* Left Side: Selected Project Image */}
+        <Tippy
+          content="&#8599;"
+          arrow={false}
+          followCursor={true}
+          placement="top"
+          animation="scale"
+          theme="translucent"
+          plugins={[followCursor]}
+        >
+          <ProjectLink href={selectedProject.githubUrl} />
+        </Tippy>
 
         {/* Right Side: List of Projects */}
         <div className="w-1/5 p-0 overflow-y-auto overflow-x-hidden">
@@ -83,8 +116,8 @@ export default function Projects() {
                 variants={nameVariants}
                 className={`px-4 py-6 cursor-pointer  ${
                   selectedProject.id === project.id
-                    ? "bg-slate-800 text-zinc-300 border-slate-800"
-                    : "bg-transparent border-gray-600 border-opacity-45 hover:bg-slate-700 hover:bg-opacity-20"
+                    ? "bg-gradient-to-r from-transparent to-slate-800 text-zinc-300 border-slate-800"
+                    : "bg-transparent border-gray-600 border-opacity-45 hover:bg-gradient-to-r from-transparent to-slate-800/40 hover:bg-opacity-20"
                 } ${index !== 0 && "border-t"} group flex justify-between`}
                 onClick={() => setSelectedProject(project)}
               >
@@ -130,8 +163,8 @@ const projects = [
       "JWT",
       "Proctoring Algorithms",
     ],
-    imageUrl:
-      "https://cdn.dribbble.com/userupload/15733943/file/original-8841d7652d6f7fe323e08b64a61e9c3f.jpg?resize=320x240&vertical=center",
+    imageUrl: "/intervo.png",
+    githubUrl: "https://github.com/aaravdubey/intervo-frontend",
   },
   {
     id: 2,
@@ -152,8 +185,8 @@ const projects = [
       "JWT",
       "Sentiment Analysis",
     ],
-    imageUrl:
-      "https://cdn.dribbble.com/userupload/15712729/file/original-c855bfddb767d725619b03bd849f58aa.png?resize=320x240&vertical=center",
+    imageUrl: "/anukul.png",
+    githubUrl: "https://github.com/aaravdubey/Anukool",
   },
   {
     id: 3,
@@ -174,8 +207,8 @@ const projects = [
       "Multer",
       "JWT",
     ],
-    imageUrl:
-      "https://cdn.dribbble.com/userupload/15785690/file/still-21aa4d2295cfdb49d3604d16608aea61.png?resize=320x240&vertical=center",
+    imageUrl: "/codecampus.png",
+    githubUrl: "https://github.com/aaravdubey/CodeCampus",
   },
   {
     id: 4,
@@ -197,8 +230,30 @@ const projects = [
       "MongoDB",
       "JWT",
     ],
-    imageUrl:
-      "https://cdn.dribbble.com/userupload/15785690/file/still-21aa4d2295cfdb49d3604d16608aea61.png?resize=320x240&vertical=center",
+    imageUrl: "/testpo.png",
+    githubUrl: "https://github.com/aaravdubey/TestPoint",
+  },
+  {
+    id: 5,
+    name: "Portfolio",
+    text: [
+      "Developed a minimal portfolio website using Next.js, showcasing personal projects and experiences.",
+      "Implemented a dynamic navigation system with React-Scroll and Framer Motion for smooth page transitions and interactive user experience.",
+      "Styled the entire web app with Tailwind CSS.",
+      "Integrated Framer Motion animations to enhance the interactivity of project showcases and page transitions.",
+      "Incorporated tippy.js for tooltips, providing contextual information on hover, enhancing user guidance and experience.",
+      "Utilized react-icons to integrate a consistent and visually appealing iconography throughout the application.",
+    ],
+    stack: [
+      "Next.js",
+      "Tailwind",
+      "Framer Motion",
+      "React-scroll",
+      "Tippy.js",
+      "React-icons",
+    ],
+    imageUrl: "/portfolio.png",
+    githubUrl: "https://github.com/aaravdubey/portfolio",
   },
 ];
 
@@ -211,9 +266,9 @@ const cardVariants: Variants = {
     x: 0,
     opacity: 1,
     transition: {
-      type: "spring",
+      type: "tween",
       opacity: { duration: 0.4 },
-      duration: 1,
+      duration: 0.3,
     },
   },
 };
