@@ -9,7 +9,7 @@ import Skills from "./ui/skills";
 
 export default function Home() {
   return (
-    <div className="text-zinc-300 overflow-x-hidden">
+    <div className="text-zinc-300 overflow-hidden">
       <div id="main-component">
         <Main />
       </div>

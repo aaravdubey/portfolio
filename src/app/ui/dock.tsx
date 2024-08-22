@@ -28,7 +28,7 @@ const AboutLink = forwardRef<HTMLSpanElement>((props, ref) => (
   </span>
 ));
 
-AboutLink.displayName = 'AboutLink';
+AboutLink.displayName = "AboutLink";
 
 const ProjectsLink = forwardRef<HTMLSpanElement>((props, ref) => (
   <span ref={ref}>
@@ -46,7 +46,7 @@ const ProjectsLink = forwardRef<HTMLSpanElement>((props, ref) => (
   </span>
 ));
 
-ProjectsLink.displayName = 'ProjectsLink';
+ProjectsLink.displayName = "ProjectsLink";
 
 const ExperienceLink = forwardRef<HTMLSpanElement>((props, ref) => (
   <span ref={ref}>
@@ -64,7 +64,7 @@ const ExperienceLink = forwardRef<HTMLSpanElement>((props, ref) => (
   </span>
 ));
 
-ExperienceLink.displayName = 'ExperienceLink';
+ExperienceLink.displayName = "ExperienceLink";
 
 const SkillsLink = forwardRef<HTMLSpanElement>((props, ref) => (
   <span ref={ref}>
@@ -82,10 +82,12 @@ const SkillsLink = forwardRef<HTMLSpanElement>((props, ref) => (
   </span>
 ));
 
-SkillsLink.displayName = 'SkillsLink';
+SkillsLink.displayName = "SkillsLink";
 
 export default function Dock() {
   const [showDock, setShowDock] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  let scrollTimeout: NodeJS.Timeout;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,6 +96,17 @@ export default function Dock() {
       ) as HTMLElement | null;
       const mainHeight = mainComponent?.offsetHeight || 0;
       setShowDock(window.scrollY > mainHeight / 2);
+
+      // Set scrolling state to true
+      setIsScrolling(true);
+
+      // Clear previous timeout
+      clearTimeout(scrollTimeout);
+
+      // Hide the dock after 2 seconds of inactivity
+      scrollTimeout = setTimeout(() => {
+        setIsScrolling(false);
+      }, 2000);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -105,8 +118,8 @@ export default function Dock() {
   return (
     <>
       <AnimatePresence>
-        {showDock && (
-          <div className="fixed inset-y-0 right-8 flex items-center">
+        {showDock && isScrolling && (
+          <div className="fixed inset-y-0 right-8 flex items-center z-10">
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}

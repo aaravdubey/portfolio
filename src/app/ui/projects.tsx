@@ -17,7 +17,7 @@ export default function Projects() {
   const ProjectLink = forwardRef<HTMLAnchorElement, { href: string }>(
     ({ href }, ref) => (
       <a
-        className="w-4/5 p-4 block rounded-lg relative overflow-hidden group cursor-none"
+        className="w-full md:w-4/5 h-full md:p-4 block rounded-lg relative overflow-hidden group cursor-none"
         href={href}
         target="_blank"
         rel="noopener noreferrer"
@@ -43,18 +43,18 @@ export default function Projects() {
           <div
             className={`${text.className} text-zinc-300 absolute inset-x-0 left-0 z-10 h-full bg-gradient-to-r from-[#09090b] to-transpare flex transition ease-in-out duration-100 flex-col text-left items-start py-5 gap-5 tracking-wide`}
           >
-            <p className="text-3xl font-bold tracking-wider">
+            <p className="text-2xl md:text-3xl font-bold tracking-wider">
               {selectedProject.name}
             </p>
-            <ul className="w-[40%]">
-              {selectedProject.text.map((text) => (
-                <li key={text} className="text-xs mb-2">
+            <ul className="w-[90%] lg:w-[50%] xl:w-[40%]">
+              {selectedProject.text.map((text, index) => (
+                <li key={text} className={`text-xs mb-2`}>
                   - {text}
                 </li>
               ))}
             </ul>
             {/* <p className="w-[40%]">{selectedProject.text}</p> */}
-            <div className="flex flex-wrap gap-2 w-[40%]">
+            <div className="flex flex-wrap gap-2 w-[90%] lg:w-[50%] xl:w-[40%]">
               {selectedProject.stack.map((stack, index) => {
                 return (
                   <span
@@ -77,16 +77,16 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="h-screen flex flex-col gap-10 relative px-36 py-10"
+      className="h-screen flex flex-col gap-10 relative px-5 sm:px-10 lg:px-36 py-10"
     >
       <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.7)] bg-slate-800 absolute right-0 top-1/2"></div>
       <h1
-        className={`${heading.className} text-4xl font-bold text-slate-300 tracking-wider`}
+        className={`${heading.className} text-3xl md:text-4xl font-bold text-slate-300 tracking-wider`}
       >
         {"< PROJECTS />"}
       </h1>
 
-      <div className="flex-1 flex gap-5 h-screen">
+      <div className="flex-1 flex flex-col-reverse md:flex-row gap-5 h-screen">
         {/* Left Side: Selected Project Image */}
         <Tippy
           content="&#8599;"
@@ -101,10 +101,10 @@ export default function Projects() {
         </Tippy>
 
         {/* Right Side: List of Projects */}
-        <div className="w-1/5 p-0 overflow-y-auto overflow-x-hidden">
+        <div className="md:w-1/5 h-[14%] p-0 overflow-y-auto overflow-x-hidden">
           {/* <h2 className="text-xl font-semibold mb-4">Projects</h2> */}
           <ul
-            className={`${text.className} flex flex-col justify-end h-full tracking-widest`}
+            className={`${text.className} flex flex-wrap md:flex-nowrap gap-3 md:gap-0 md:flex-col md:justify-end h-full tracking-widest`}
           >
             {projects.map((project, index) => (
               <motion.li
@@ -114,11 +114,11 @@ export default function Projects() {
                 viewport={{ once: false, amount: 0.4 }}
                 // custom={index * 0.1}
                 variants={nameVariants}
-                className={`px-4 py-6 cursor-pointer  ${
+                className={`md:px-4 md:py-6 cursor-pointer border py-0.5 px-1.5 rounded  ${
                   selectedProject.id === project.id
-                    ? "bg-gradient-to-r from-transparent to-slate-800 text-zinc-300 border-slate-800"
-                    : "bg-transparent border-gray-600 border-opacity-45 hover:bg-gradient-to-r from-transparent to-slate-800/40 hover:bg-opacity-20"
-                } ${index !== 0 && "border-t"} group flex justify-between`}
+                    ? "bg-slate-700 bg-opacity-70 md:bg-gradient-to-r from-transparent to-slate-800 text-zinc-300 border-slate-800"
+                    : "bg-transparent border-gray-600 border-opacity-45 md:hover:bg-gradient-to-r from-transparent to-slate-800/40 hover:bg-opacity-20"
+                } ${index !== 0 && "md:border-t"} group flex justify-between`}
                 onClick={() => setSelectedProject(project)}
               >
                 <span
@@ -126,7 +126,7 @@ export default function Projects() {
                     selectedProject.id === project.id
                       ? "w-6 scale-150 opacity-100"
                       : "w-0 scale-0 opacity-0"
-                  } flex w-0 items-center justify-center transform scale-0 opacity-0 transition-all duration-200 ease-in group-hover:scale-150 group-hover:w-6 group-hover:opacity-20`}
+                  } hidden md:flex w-0 items-center justify-center transform scale-0 opacity-0 transition-all duration-200 ease-in group-hover:scale-150 group-hover:w-6 group-hover:opacity-20`}
                 >
                   <IoIosArrowBack />
                 </span>
