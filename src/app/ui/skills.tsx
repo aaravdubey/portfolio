@@ -19,26 +19,77 @@ import { Variants, motion } from "framer-motion";
 
 export default function Skills() {
   const skills = [
-    { name: "javascript", icon: <SiJavascript className="text-6xl" /> },
-    { name: "java", icon: <FaJava className="text-6xl" /> },
-    { name: "python", icon: <SiPython className="text-6xl" /> },
-    { name: "node", icon: <FaNode className="text-6xl" /> },
-    { name: "react", icon: <FaReact className="text-6xl" /> },
-    { name: "next", icon: <SiNextdotjs className="text-6xl" /> },
-    { name: "flask", icon: <SiFlask className="text-6xl" /> },
-    { name: "express", icon: <SiExpress className="text-6xl" /> },
-    { name: "mongoDB", icon: <SiMongodb className="text-6xl" /> },
-    { name: "postgres", icon: <BiLogoPostgresql className="text-6xl" /> },
-    { name: "git", icon: <FaGitAlt className="text-6xl" /> },
+    {
+      name: "javascript",
+      icon: <SiJavascript className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "java",
+      icon: <FaJava className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "python",
+      icon: <SiPython className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "node",
+      icon: <FaNode className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "react",
+      icon: <FaReact className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "next",
+      icon: <SiNextdotjs className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "flask",
+      icon: <SiFlask className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "express",
+      icon: <SiExpress className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "mongoDB",
+      icon: <SiMongodb className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "postgres",
+      icon: <BiLogoPostgresql className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "git",
+      icon: <FaGitAlt className="text-4xl md:text-6xl" />,
+    },
   ];
 
   const tools = [
-    { name: "vs code", icon: <SiVisualstudiocode className="text-6xl" /> },
-    { name: "github", icon: <FaGithub className="text-6xl" /> },
-    { name: "postman", icon: <SiPostman className="text-6xl" /> },
-    { name: "figma", icon: <SiFigma className="text-6xl" /> },
-    { name: "photoshop", icon: <SiAdobephotoshop className="text-6xl" /> },
-    { name: "vercel", icon: <SiVercel className="text-6xl" /> },
+    {
+      name: "vs code",
+      icon: <SiVisualstudiocode className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "github",
+      icon: <FaGithub className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "postman",
+      icon: <SiPostman className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "figma",
+      icon: <SiFigma className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "photoshop",
+      icon: <SiAdobephotoshop className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "vercel",
+      icon: <SiVercel className="text-4xl md:text-6xl" />,
+    },
   ];
 
   const cardVariants: Variants = {
@@ -59,19 +110,24 @@ export default function Skills() {
   };
 
   return (
-    <div id="skills" className="h-screen flex flex-col pt-14 px-36 text-grey">
+    <div
+      id="skills"
+      className="flex flex-col pt-14 px-5 sm:px-10 xl:px-36 text-grey"
+    >
       <h1
-        className={`${heading.className} text-4xl tracking-wider flex justify-between`}
+        className={`${heading.className} text-3xl md:text-4xl tracking-wider flex justify-between`}
       >
-        My Skillset
+        <span className="relative">My Skillset</span>
         <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
       </h1>
 
-      <div className={`${text.className} my-10 flex flex-wrap gap-5`}>
+      <div
+        className={`${text.className} my-10 grid grid-cols-3 sm:grid-cols-4 md:flex flex-wrap gap-5`}
+      >
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
+            className="md:w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-3 md:p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
@@ -79,21 +135,25 @@ export default function Skills() {
             variants={cardVariants}
           >
             {skill.icon}
-            <p>{skill.name}</p>
+            <p className="text-xs md:text-base">{skill.name}</p>
           </motion.div>
         ))}
       </div>
 
-      <h1 className={`${heading.className} text-4xl tracking-wider`}>
+      <h1
+        className={`${heading.className} text-3xl md:text-4xl tracking-wider`}
+      >
         Tools I Use
         <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
       </h1>
 
-      <motion.div className={`${text.className} my-10 flex flex-wrap gap-5`}>
+      <motion.div
+        className={`${text.className} my-10 grid grid-cols-3 sm:grid-cols-4 md:flex flex-wrap gap-5`}
+      >
         {tools.map((tool, index) => (
           <motion.div
             key={index}
-            className="w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
+            className="md:w-32 flex flex-col items-center gap-4 bg-gray-900 tracking-wider rounded-lg p-3 md:p-5 font-semibold transition-colors duration-200 hover:bg-gray-800 saturate-[.6]"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: false, amount: 0.1 }}
@@ -101,7 +161,7 @@ export default function Skills() {
             variants={cardVariants}
           >
             {tool.icon}
-            <p>{tool.name}</p>
+            <p className="text-xs md:text-base">{tool.name}</p>
           </motion.div>
         ))}
       </motion.div>

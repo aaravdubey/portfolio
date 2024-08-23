@@ -19,28 +19,28 @@ export default function About() {
       <Glow>
         <motion.section
           id="about"
-          className={`${text.className} h-[50rem] flex justify-center items-center md:text-xl px-0 sm:px-10 lg:px-36 tracking-wide`}
+          className={`${text.className} flex justify-center items-center py-20 md:text-xl px-5 sm:px-10 xl:px-36 tracking-wide`}
         >
           <motion.div
             style={{ opacity: scrollYProgress }}
             ref={element}
-            className="flex gap-10 justify-center items-center"
+            className="flex gap-10  items-center"
           >
-            <div className="w-2/3 flex flex-col gap-8 text-zinc-300">
-              <div className="flex justify-between">
+            <div className="flex flex-col gap-8 text-zinc-300">
+              <div className="flex items-center justify-between gap-5 h-min">
                 <h1
                   className={`${heading.className} text-3xl md:text-5xl font-bold leading-[1.4] text-slate-300`}
                 >
                   Hello! <br /> I&#39;m Aarav.
                   <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.8)] bg-slate-800"></div>
                 </h1>
-                <div className="relative w-1/3 block sm:hidden ">
+                <div className="relative lg:hidden">
                   <Image
                     src="/photor.png"
-                    className="brightness-90 saturate-[.35] contrast-150 bg-slate-700 rounded-2xl"
+                    className="brightness-90 saturate-[.35] contrast-150 bg-transparent rounded-lg"
                     alt="Picture of myself"
-                    width={500}
-                    height={500}
+                    width={150}
+                    height={150}
                   />
                   {/* <div className="absolute inset-0 fade"></div> */}
                 </div>
@@ -57,7 +57,7 @@ export default function About() {
                 world of web development.
               </p>
             </div>
-            <div className="relative w-1/3 hidden sm:block">
+            <div className="relative hidden lg:block">
               <Image
                 src="/photor.png"
                 className="brightness-90 saturate-[.4] contrast-150 bg-slate-700 rounded-t-3xl"

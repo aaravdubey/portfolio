@@ -46,15 +46,20 @@ export default function Projects() {
             <p className="text-2xl md:text-3xl font-bold tracking-wider">
               {selectedProject.name}
             </p>
-            <ul className="w-[90%] lg:w-[50%] xl:w-[40%]">
+            <ul className="w-[50%] xl:w-[40%]">
               {selectedProject.text.map((text, index) => (
-                <li key={text} className={`text-xs mb-2`}>
-                  - {text}
+                <li
+                  key={text}
+                  className={`text-xs mb-2 ${
+                    index > 0 ? "hidden sm:list-item" : ""
+                  }`}
+                >
+                  <span className="hidden sm:inline">-</span> {text}
                 </li>
               ))}
             </ul>
             {/* <p className="w-[40%]">{selectedProject.text}</p> */}
-            <div className="flex flex-wrap gap-2 w-[90%] lg:w-[50%] xl:w-[40%]">
+            <div className="flex flex-wrap gap-2 w-[50%] xl:w-[40%]">
               {selectedProject.stack.map((stack, index) => {
                 return (
                   <span
@@ -77,7 +82,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="h-screen flex flex-col gap-10 relative px-5 sm:px-10 lg:px-36 py-10"
+      className="h-[40rem] sm:h-[50rem] flex flex-col gap-10 relative px-5 sm:px-10 lg:px-36 py-12 sm:py-10"
     >
       <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.7)] bg-slate-800 absolute right-0 top-1/2"></div>
       <h1
@@ -101,7 +106,7 @@ export default function Projects() {
         </Tippy>
 
         {/* Right Side: List of Projects */}
-        <div className="md:w-1/5 h-[14%] p-0 overflow-y-auto overflow-x-hidden">
+        <div className="md:w-1/5 h-[16%] md:h-full p-0 overflow-y-auto overflow-x-hidden">
           {/* <h2 className="text-xl font-semibold mb-4">Projects</h2> */}
           <ul
             className={`${text.className} flex flex-wrap md:flex-nowrap gap-3 md:gap-0 md:flex-col md:justify-end h-full tracking-widest`}
@@ -114,9 +119,9 @@ export default function Projects() {
                 viewport={{ once: false, amount: 0.4 }}
                 // custom={index * 0.1}
                 variants={nameVariants}
-                className={`md:px-4 md:py-6 cursor-pointer border py-0.5 px-1.5 rounded  ${
+                className={`md:px-4 md:py-6 cursor-pointer border md:border-0 py-0.5 px-1.5 rounded  ${
                   selectedProject.id === project.id
-                    ? "bg-slate-700 bg-opacity-70 md:bg-gradient-to-r from-transparent to-slate-800 text-zinc-300 border-slate-800"
+                    ? "bg-slate-700 bg-opacity-70 md:opacity-100 md:bg-transparent md:bg-gradient-to-r from-transparent to-slate-800 text-zinc-300 border-slate-800"
                     : "bg-transparent border-gray-600 border-opacity-45 md:hover:bg-gradient-to-r from-transparent to-slate-800/40 hover:bg-opacity-20"
                 } ${index !== 0 && "md:border-t"} group flex justify-between`}
                 onClick={() => setSelectedProject(project)}
