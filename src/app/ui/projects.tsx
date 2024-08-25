@@ -59,12 +59,12 @@ export default function Projects() {
               ))}
             </ul>
             {/* <p className="w-[40%]">{selectedProject.text}</p> */}
-            <div className="flex flex-wrap gap-2 w-[50%] xl:w-[40%]">
+            <div className="flex flex-wrap gap-2 w-full xl:w-[40%]">
               {selectedProject.stack.map((stack, index) => {
                 return (
                   <span
                     key={index}
-                    className="bg-zinc-700 rounded-3xl px-2 py-1 text-xs"
+                    className="bg-zinc-700 rounded-3xl px-2 py-1 text-[0.6rem] md:text-xs"
                   >
                     {stack}
                   </span>
@@ -82,7 +82,7 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className="h-[40rem] sm:h-[50rem] flex flex-col gap-10 relative px-5 sm:px-10 lg:px-36 py-12 sm:py-10"
+      className="h-[40rem] sm:h-[50rem] flex flex-col gap-10 relative px-5 sm:px-10 xl:px-36 py-12 sm:py-10"
     >
       <div className="w-0 h-0 bg-transparent rounded-full shadow-[0_0_350px_200px_rgba(30,41,59,0.7)] bg-slate-800 absolute right-0 top-1/2"></div>
       <h1

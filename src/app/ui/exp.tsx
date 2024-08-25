@@ -62,8 +62,8 @@ export default function Exp() {
               // custom={index * 0.1}
               variants={cardVariants}
             >
-              <div className="flex justify-between items-center gap-5 text-lg md:text-xl">
-                <h2 className="font-semibold ">{edu.title}</h2>
+              <div className="flex justify-between items-center gap-5 text-base md:text-lg">
+                <h2 className="font-semibold">{edu.title}</h2>
                 <p className="font-semibold text-slate-400">{edu.percentage}</p>
               </div>
               <p className="mt-2 text-zinc-400 text-xs md:text-sm">

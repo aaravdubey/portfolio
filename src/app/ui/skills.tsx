@@ -1,5 +1,5 @@
 import { text, heading } from "./fonts";
-import { FaReact, FaNode, FaGithub, FaJava, FaGitAlt } from "react-icons/fa6";
+import { FaReact, FaNode, FaGithub, FaJava, FaGitAlt, FaPhp } from "react-icons/fa6";
 import {
   SiNextdotjs,
   SiMongodb,
@@ -58,6 +58,10 @@ export default function Skills() {
     {
       name: "postgres",
       icon: <BiLogoPostgresql className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "php",
+      icon: <FaPhp className="text-4xl md:text-6xl" />,
     },
     {
       name: "git",

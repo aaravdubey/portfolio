@@ -76,6 +76,28 @@ body {
   }
 }
 
+.appear {
+  transition: opacity 1s ease;
+  pointer-events: none;
+  animation: appearChange 10s forwards;
+}
+
+@keyframes appearChange {
+  0% {
+    opacity: 0;
+    /* Red tint */
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 40;
+    /* Back to Red */
+  }
+}
+
 
 .tint {
   background-color: rgba(17, 24, 39, 0.6);
@@ -132,40 +154,11 @@ body {
 }
 
 .gradient-text {
-  background: -webkit-linear-gradient(rgba(194, 194, 201, 0.3), rgba(67, 67, 67, 0.3));
+  background: -webkit-linear-gradient(rgba(194, 194, 201, 0.3), rgba(67, 67, 67, 0.5));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dock-active {
   background-color: rgba(71, 85, 105, 0.4);
-}
-
-
-/* Big Screens (Large Desktops) */
-@media screen and (min-width: 1600px) {
-  body {
-    font-size: 110%;
-  }
-}
-
-/* Normal Laptop Screens */
-@media screen and (min-width: 1200px) and (max-width: 1599px) {
-  body {
-    font-size: 100%;
-  }
-}
-
-/* Small Laptops/Tablets */
-@media screen and (min-width: 768px) and (max-width: 1199px) {
-  body {
-    font-size: 90%;
-  }
-}
-
-/* Mobile Phones */
-@media screen and (max-width: 767px) {
-  body {
-    font-size: 80%;
-  }
 }

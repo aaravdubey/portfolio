@@ -19,14 +19,14 @@ export default function About() {
       <Glow>
         <motion.section
           id="about"
-          className={`${text.className} flex justify-center items-center py-20 md:text-xl px-5 sm:px-10 xl:px-36 tracking-wide`}
+          className={`${text.className} flex w-full items-center py-36 md:text-xl px-5 sm:px-10 xl:px-36 tracking-wide`}
         >
           <motion.div
             style={{ opacity: scrollYProgress }}
             ref={element}
-            className="flex gap-10  items-center"
+            className="w-full flex gap-10 justify-between items-center"
           >
-            <div className="flex flex-col gap-8 text-zinc-300">
+            <div className="flex flex-col gap-8 text-zinc-300 text-sm sm:text-base md:text-lg xl:text-xl">
               <div className="flex items-center justify-between gap-5 h-min">
                 <h1
                   className={`${heading.className} text-3xl md:text-5xl font-bold leading-[1.4] text-slate-300`}
