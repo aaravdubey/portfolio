@@ -103,9 +103,9 @@ export default function Exp() {
                 <h2 className="text-lg md:text-xl font-semibold">
                   {exp.title}
                 </h2>
-                <a className="font-semibold text-lg text-slate-400 p-2 rounded-full hover:bg-slate-400 hover:bg-opacity-10">
+                {/* <a className="font-semibold text-lg text-slate-400 p-2 rounded-full hover:bg-slate-400 hover:bg-opacity-10">
                   <LuExternalLink />
-                </a>
+                </a> */}
               </div>
               <p className="mt-2 text-slate-300 text-xs md:text-sm">
                 {exp.university}

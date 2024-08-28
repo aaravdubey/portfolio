@@ -1,14 +1,15 @@
-import Animation from "./loading.json";
-import Lottie from "lottie-react";
+import { text, heading } from "./fonts";
 
 export default function Loading() {
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <Lottie
-        animationData={Animation}
-        loop={true}
-        style={{ width: "30%", height: "auto" }}
-      />
+    <div className="flex items-center gap-3 p-10">
+      <div className="pulse-shadow"></div>
+      {/* <div className="loader"></div> */}
+      <span
+        className={`${heading.className} text-gray-100 text-2xl tracking-widest`}
+      >
+        loading...
+      </span>
     </div>
   );
 }

@@ -125,7 +125,7 @@ export default function Dock() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 50 }}
               transition={{ duration: 0.3 }}
-              className=" flex flex-col gap-1 items-center bg-[#09090b] rounded-3xl p-1 md:px-3 py-2 md:py-6 z-10 border space-x-0.5 border-[#2d2d32]"
+              className=" flex flex-col gap-1 items-center bg-[#09090b] rounded-3xl p-1.5 md:px-3 py-2.5 md:py-6 z-10 border space-x-0.5 border-[#2d2d32]"
             >
               <Tippy
                 content="About"

@@ -79,7 +79,7 @@ body {
 .appear {
   transition: opacity 1s ease;
   pointer-events: none;
-  animation: appearChange 10s forwards;
+  animation: appearChange 7s forwards ease-in;
 }
 
 @keyframes appearChange {
@@ -88,14 +88,125 @@ body {
     /* Red tint */
   }
 
-  50% {
-    opacity: 0;
+  90% {
+    opacity: 0.4;
   }
 
   100% {
-    opacity: 40;
+    opacity: 0.7;
     /* Back to Red */
   }
+}
+
+.disappear {
+  /* Transition is not needed for animation */
+  pointer-events: none;
+  animation: disappearChange 4s forwards;
+}
+
+@keyframes disappearChange {
+  0% {
+    opacity: 1;
+    /* Fully opaque */
+  }
+
+  90% {
+    opacity: 1;
+    /* Still fully opaque */
+  }
+
+  100% {
+    opacity: 0;
+    /* Fully transparent */
+  }
+}
+
+/* .loader {
+  width: 12px;
+  height: 12px;
+  border: 3px solid #a1a1aa;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+} */
+
+/* From Uiverse.io by mrhyddenn */
+.loader {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.loader::before,
+.loader::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.loader::before {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(0deg, #111827 0%, #324773 100%);
+  animation: load012323 1.5s infinite linear;
+}
+
+.loader::after {
+  width: 85%;
+  height: 85%;
+  background-color: #09090b;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes load012323 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse-shadow {
+  0% {
+    box-shadow: 0 0 500px 300px rgba(30, 41, 59, 0.6);
+  }
+
+  50% {
+    box-shadow: 0 0 600px 400px rgba(30, 41, 59, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 500px 300px rgba(30, 41, 59, 0.6);
+  }
+}
+
+.pulse-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-radius: 50%;
+  background-color: #1e293b;
+  /* Background color */
+  box-shadow: 0 0 500px 300px rgba(30, 41, 59, 0.8);
+  /* Initial shadow */
+  animation: pulse-shadow 2s infinite;
+  /* Apply the pulsing animation */
 }
 
 

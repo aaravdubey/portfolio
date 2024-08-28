@@ -1,5 +1,12 @@
 import { text, heading } from "./fonts";
-import { FaReact, FaNode, FaGithub, FaJava, FaGitAlt, FaPhp } from "react-icons/fa6";
+import {
+  FaReact,
+  FaNode,
+  FaGithub,
+  FaJava,
+  FaGitAlt,
+  FaPhp,
+} from "react-icons/fa6";
 import {
   SiNextdotjs,
   SiMongodb,
@@ -169,6 +176,20 @@ export default function Skills() {
           </motion.div>
         ))}
       </motion.div>
+
+      <div className="md:w-[60%] text-center mx-auto my-20 text-gray-500 text-sm md:text-base">
+        Designed and coded in{" "}
+        <span className="text-gray-400 font-medium">Visual Studio Code</span> by
+        yours truly. Built with{" "}
+        <span className="text-gray-400 font-medium">Next.js</span>,{" "}
+        <span className="text-gray-400 font-medium">Tailwind CSS</span> and{" "}
+        <span className="text-gray-400 font-medium">Framer Motion</span>,
+        deployed with <span className="text-gray-400 font-medium">Vercel</span>.
+        Headings are set in the{" "}
+        <span className="text-gray-400 font-medium">Monsterrat</span> typeface,
+        while the body text is set in the{" "}
+        <span className="text-gray-400 font-medium">Poppins</span> typeface.
+      </div>
     </div>
   );
 }

@@ -5,8 +5,10 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import StarsBg from "./stars";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
+import { useEffect, useState } from "react";
 
 export default function Main() {
+
   const handleMailTo = () => {
     const email = "daarav101@gmail.com";
     const subject = "Hello Aarav!";
@@ -25,13 +27,20 @@ export default function Main() {
           <Stars radius={50} count={2500} factor={4} fade speed={2} />
         </Canvas>
       </div> */}
-      <header className="flex justify-between items-center w-full absolute top-5 px-5">
+      <header className="flex flex-col gap-4 w-full absolute top-5 px-5">
         <p
           className={`${heading.className} z-10 text-sm md:text-lg font-semibold tracking-widest text-reveal opacity-0 `}
           style={{ animationDelay: "0.6s" }}
         >
-          / aaravdubey.dev
+          aaravdubey.me
         </p>
+        {/* <p
+          className={`${heading.className} z-10 text-sm md:text-lg font-semibold tracking-widest opacity-0 disappear flex items-center gap-2`}
+          style={{ animationDelay: "0.6s" }}
+        >
+          <span className="loader"></span>
+          <span className="text-base">loading animations & components...</span>
+        </p> */}
       </header>
       {/* <Image
         src="https://images6.alphacoders.com/135/1350469.png"

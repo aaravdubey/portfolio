@@ -24,7 +24,7 @@ export default function About() {
           <motion.div
             style={{ opacity: scrollYProgress }}
             ref={element}
-            className="w-full flex gap-10 justify-between items-center"
+            className="w-full flex gap-16 justify-between items-center"
           >
             <div className="flex flex-col gap-8 text-zinc-300 text-sm sm:text-base md:text-lg xl:text-xl">
               <div className="flex items-center justify-between gap-5 h-min">
@@ -37,7 +37,7 @@ export default function About() {
                 <div className="relative lg:hidden">
                   <Image
                     src="/photor.png"
-                    className="brightness-90 saturate-[.35] contrast-150 bg-transparent rounded-lg"
+                    className="brightness-90 saturate-[.35] opacity-80 contrast-150 bg-transparent rounded-lg"
                     alt="Picture of myself"
                     width={150}
                     height={150}
@@ -45,16 +45,22 @@ export default function About() {
                   {/* <div className="absolute inset-0 fade"></div> */}
                 </div>
               </div>
-              <p>I&#39;m an MCA student at Christ University Bangalore.</p>
-              <p>I&#39;m passionate about programming and web development.</p>
               <p>
-                I&#39;m fluent in React.js, Next.js, and Node.js, and I love
-                creating dynamic and responsive web applications.
+                I&#39;m a CS student and a JavaScript developer based in
+                Bangalore, Karnataka, India.
               </p>
               <p>
-                When I&#39;m not busy debugging (which is rare), I&#39;m always
-                eager to learn new things and stay ahead in the ever-evolving
-                world of web development.
+                I&#39;m passionate about programming and web development, and I
+                have also had some experience in data analytics.
+              </p>
+              <p>
+                I&#39;m fluent in React.js, Next.js, and Node.js, and I love
+                creating dynamic web applications with these technologies.
+              </p>
+              <p>
+                When I&#39;m not busy debugging or completing assignments (which
+                is rare), I&#39;m always eager to learn new things and stay
+                ahead in the fast-paced world of web development.
               </p>
             </div>
             <div className="relative hidden lg:block">
@@ -62,8 +68,8 @@ export default function About() {
                 src="/photor.png"
                 className="brightness-90 saturate-[.4] contrast-150 bg-slate-700 rounded-t-3xl"
                 alt="Picture of myself"
-                width={500}
-                height={500}
+                width={600}
+                height={600}
               />
               <div className="absolute inset-0 fade"></div>
             </div>
