@@ -43,7 +43,7 @@ export default function Exp() {
     >
       <div className="w-full flex flex-col justify-end">
         <h1
-          className={`${heading.className} text-3xl md:text-4xl font-bold text-slate-300 tracking-wider pb-2 flex relative gap-2 justify-end items-center`}
+          className={`${heading.className} text-3xl md:text-4xl font-bold text-slate-300 tracking-wider pb-2 flex flex-row-reverse md:flex-row relative gap-2 self-start md:self-end items-center`}
         >
           <BiSolidDownArrow className="text-slate-300 inline" />
           EDUCATION
@@ -157,7 +157,7 @@ const education = [
 
 const experience = [
   {
-    title: "Junior software developemnt intern",
+    title: "Junior software development intern",
     percentage: "91.50%",
     university: "HACK-X Security",
     tasks: [
@@ -170,7 +170,7 @@ const experience = [
     duration: "Apr 2023 - Jun 2023",
   },
   {
-    title: "Junior web developemnt intern",
+    title: "Junior web development intern",
     percentage: "76.28%*",
     university: "ICIER",
     tasks: [

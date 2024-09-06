@@ -1,15 +1,16 @@
-import { text, heading } from "./fonts";
+interface LoadingProps {
+  isFading: boolean;
+}
 
-export default function Loading() {
+export default function Loading({ isFading }: LoadingProps) {
   return (
-    <div className="flex items-center gap-3 p-10">
+    <div
+      className={`h-screen w-screen flex gap-3 p-10 transition-opacity duration-500 ${
+        isFading ? "opacity-0" : "opacity-100"
+      }`}
+    >
       <div className="pulse-shadow"></div>
-      {/* <div className="loader"></div> */}
-      <span
-        className={`${heading.className} text-gray-100 text-2xl tracking-widest`}
-      >
-        loading...
-      </span>
+      <span className="text-gray-100 text-2xl tracking-widest">loading...</span>
     </div>
   );
 }

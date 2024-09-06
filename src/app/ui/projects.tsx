@@ -119,7 +119,7 @@ export default function Projects() {
                 viewport={{ once: false, amount: 0.4 }}
                 // custom={index * 0.1}
                 variants={nameVariants}
-                className={`md:px-4 md:py-6 cursor-pointer border md:border-0 py-0.5 px-1.5 rounded  ${
+                className={`md:px-4 md:py-6 cursor-pointer border md:border-0 py-0.5 px-1.5 rounded text-xs md:text-base  ${
                   selectedProject.id === project.id
                     ? "bg-slate-700 bg-opacity-70 md:opacity-100 md:bg-transparent md:bg-gradient-to-r from-transparent to-slate-800 text-zinc-300 border-slate-800"
                     : "bg-transparent border-gray-600 border-opacity-45 md:hover:bg-gradient-to-r from-transparent to-slate-800/40 hover:bg-opacity-20"

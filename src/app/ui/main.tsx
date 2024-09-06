@@ -5,10 +5,12 @@ import { Link, animateScroll as scroll } from "react-scroll";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import StarsBg from "./stars";
 import { FaLinkedin, FaGithub } from "react-icons/fa6";
-import { useEffect, useState } from "react";
 
-export default function Main() {
-
+export default function Main({
+  setIsResume,
+}: {
+  setIsResume: (value: boolean) => void;
+}) {
   const handleMailTo = () => {
     const email = "daarav101@gmail.com";
     const subject = "Hello Aarav!";
@@ -20,7 +22,7 @@ export default function Main() {
   };
 
   return (
-    <main className="image-container h-[35rem] lg:h-[50rem] flex flex-col justify-end bg-black relative text-zinc-400 ">
+    <main id="main-component" className="image-container h-[40rem] lg:h-[50rem] flex flex-col justify-end bg-black relative text-zinc-400 ">
       <StarsBg />
       {/* <div className="absolute inset-0 z-0">
         <Canvas>
@@ -73,17 +75,16 @@ export default function Main() {
             </a>
             <button
               onClick={handleMailTo}
-              className="h-fit py-1 px-2 md:px-4 bg-slate-500 rounded-lg bg-opacity-20 backdrop-blur-md hover:backdrop-blur-lg hover:bg-opacity-30"
+              className="h-fit py-1 px-2 md:px-4 bg-slate-500 rounded-lg bg-opacity-20 backdrop-blur-md hover:backdrop-blur-lg hover:bg-opacity-30 text-sm md:text-base"
             >
               Say Hello
             </button>
-            <a
-              href="Resume.pdf"
-              download="Aarav Dubey Resume.pdf"
-              className="h-fit py-1 px-2 md:px-4 bg-slate-500 rounded-lg bg-opacity-20 backdrop-blur-md hover:backdrop-blur-lg hover:bg-opacity-30"
+            <button
+              onClick={() => setIsResume(true)}
+              className="h-fit py-1 px-2 md:px-4 bg-slate-500 rounded-lg bg-opacity-20 backdrop-blur-md hover:backdrop-blur-lg hover:bg-opacity-30 text-sm md:text-base"
             >
               Resume
-            </a>
+            </button>
           </div>
           <div className="flex flex-col gap-1">
             <Link
@@ -94,7 +95,7 @@ export default function Main() {
               offset={0}
               duration={1000}
               style={{ animationDelay: "0.4s" }}
-              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 items-center"
+              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 cursor-pointer items-center"
             >
               About{"  "}
               <span className="flex w-0 items-center justify-center transform scale-0 opacity-100 transition-all duration-200 ease-in group-hover:scale-100 group-hover:w-6 group-hover:opacity-100 group-hover:ml-2">
@@ -109,7 +110,7 @@ export default function Main() {
               offset={0}
               duration={2000}
               style={{ animationDelay: "0.4s" }}
-              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 break-inside-avoid-column"
+              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 cursor-pointer break-inside-avoid-column"
             >
               Skills{"  "}
               <span className="flex w-0 items-center justify-center transform scale-0 opacity-0 transition-all duration-200 ease-in-out group-hover:scale-100 group-hover:w-6 group-hover:opacity-100 group-hover:ml-2">
@@ -124,7 +125,7 @@ export default function Main() {
               offset={0}
               duration={1500}
               style={{ animationDelay: "0.4s" }}
-              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 break-inside-avoid-column"
+              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 cursor-pointer break-inside-avoid-column"
             >
               Projects{"  "}
               <span className="flex w-0 items-center justify-center transform scale-0 opacity-0 transition-all duration-200 ease-in group-hover:scale-100 group-hover:w-6 group-hover:opacity-100 group-hover:ml-2">
@@ -139,7 +140,7 @@ export default function Main() {
               offset={0}
               duration={1500}
               style={{ animationDelay: "0.4s" }}
-              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 break-inside-avoid-column"
+              className="h-fit w-36 text-sm md:text-base group flex justify-end text-reveal opacity-0 cursor-pointer break-inside-avoid-column"
             >
               Experience{"  "}
               <span className="flex w-0 items-center justify-center transform scale-0 opacity-0 transition-all duration-200 ease-in group-hover:scale-100 group-hover:w-6 group-hover:opacity-100 group-hover:ml-2">
