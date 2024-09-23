@@ -6,6 +6,7 @@ import {
   FaJava,
   FaGitAlt,
   FaPhp,
+  FaDocker,
 } from "react-icons/fa6";
 import {
   SiNextdotjs,
@@ -20,6 +21,7 @@ import {
   SiFigma,
   SiAdobephotoshop,
   SiVercel,
+  SiSpringboot,
 } from "react-icons/si";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { Variants, motion } from "framer-motion";
@@ -41,6 +43,10 @@ export default function Skills() {
     {
       name: "node",
       icon: <FaNode className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "springboot",
+      icon: <SiSpringboot className="text-4xl md:text-6xl" />,
     },
     {
       name: "react",
@@ -80,6 +86,10 @@ export default function Skills() {
     {
       name: "vs code",
       icon: <SiVisualstudiocode className="text-4xl md:text-6xl" />,
+    },
+    {
+      name: "docker",
+      icon: <FaDocker className="text-4xl md:text-6xl" />,
     },
     {
       name: "github",

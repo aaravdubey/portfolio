@@ -26,7 +26,7 @@ export default function About() {
             ref={element}
             className="w-full flex gap-16 justify-between items-center"
           >
-            <div className="flex flex-col gap-8 text-zinc-300 text-sm sm:text-base md:text-lg xl:text-xl">
+            <div className="flex flex-col gap-8 text-zinc-400 text-sm sm:text-base md:text-lg xl:text-xl">
               <div className="flex items-center justify-between gap-5 h-min">
                 <h1
                   className={`${heading.className} text-3xl md:text-5xl font-bold leading-[1.4] text-slate-300`}
@@ -46,16 +46,35 @@ export default function About() {
                 </div>
               </div>
               <p>
-                I&#39;m a CS student and a JavaScript developer based in
-                Bangalore, Karnataka, India.
+                I&#39;m an{" "}
+                <span className="text-zinc-300 font-semibold">MCA student</span>{" "}
+                at Christ University Bengaluru and a
+                <span className="text-zinc-300 font-semibold">
+                  {" "}
+                  JavaScript developer{" "}
+                </span>
+                based in Bengaluru, Karnataka, India.
               </p>
               <p>
-                I&#39;m passionate about programming and web development, and I
-                have also had some experience in data analytics.
+                I&#39;m passionate about programming and
+                <span className="text-zinc-300 font-semibold">
+                  {" "}
+                  web development{" "}
+                </span>
+                , and I have also had some experience in data analytics.
               </p>
               <p>
-                I&#39;m fluent in React.js, Next.js, and Node.js, and I love
-                creating dynamic web applications with these technologies.
+                I&#39;m fluent in{" "}
+                <span className="text-zinc-300 font-semibold"> React.js</span>,
+                <span className="text-zinc-300 font-semibold"> Next.js</span>,{" "}
+                <span className="text-zinc-300 font-semibold">
+                  {" "}
+                  Spring Boot
+                </span>{" "}
+                and{" "}
+                <span className="text-zinc-300 font-semibold"> Node.js</span>,
+                and I love creating dynamic web applications with these
+                technologies.
               </p>
               <p>
                 When I&#39;m not busy debugging or completing assignments (which
